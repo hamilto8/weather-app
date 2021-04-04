@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/apiToken.js":
+/*!*************************!*\
+  !*** ./src/apiToken.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst apiToken = '3f06e2b0078f1ce055f5891af19c4e57';\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (apiToken);\n\n//# sourceURL=webpack://weather-app/./src/apiToken.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _weatherDisplay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weatherDisplay */ \"./src/weatherDisplay.js\");\n\r\n\r\nconst contentDiv = document.querySelector('#content');\r\n\r\ncontentDiv.appendChild(_weatherDisplay__WEBPACK_IMPORTED_MODULE_0__.default);\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _weatherDisplay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weatherDisplay */ \"./src/weatherDisplay.js\");\n/* harmony import */ var _weatherFetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weatherFetch */ \"./src/weatherFetch.js\");\n\r\n\r\n\r\nconst contentDiv = document.querySelector('#content');\r\n\r\ncontentDiv.appendChild(_weatherDisplay__WEBPACK_IMPORTED_MODULE_0__.default);\r\n\r\ndocument.onload = (0,_weatherFetch__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ }),
 
@@ -27,6 +37,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wea
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst weatherDisplay = document.createElement('h1');\r\n    weatherDisplay.innerText = 'Today\\'s Weather';\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (weatherDisplay);\n\n//# sourceURL=webpack://weather-app/./src/weatherDisplay.js?");
+
+/***/ }),
+
+/***/ "./src/weatherFetch.js":
+/*!*****************************!*\
+  !*** ./src/weatherFetch.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _apiToken__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apiToken */ \"./src/apiToken.js\");\n\r\n\r\n\r\nfunction weatherFetch(){\r\n    let cityName = 'London';\r\n    \r\n    let apiKeyUrl = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${_apiToken__WEBPACK_IMPORTED_MODULE_0__.default}`;\r\n    \r\n    fetch(apiKeyUrl,{mode: 'cors'})\r\n        .then(function(res){\r\n            // console.log('returned json');\r\n            console.log(res);\r\n        })\r\n        .catch(function(err){\r\n            console.log(err);\r\n        });\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (weatherFetch);\n\n//# sourceURL=webpack://weather-app/./src/weatherFetch.js?");
 
 /***/ })
 
