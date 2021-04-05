@@ -3,6 +3,9 @@ import weatherFetch from './weatherFetch';
 
 const contentDiv = document.querySelector('#content');
 
-contentDiv.appendChild(weatherDisplay);
+function onStart(){
+    weatherFetch();
+    weatherDisplay();
+}
 
-document.onload = weatherFetch();
+document.onload = onStart();
