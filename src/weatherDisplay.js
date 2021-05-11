@@ -1,3 +1,4 @@
+import searchBar from './searchBar';
 
 function weatherDisplay(cityName="London", temperature="69"){
     const contentDiv = document.querySelector('#content');
@@ -14,7 +15,7 @@ function weatherDisplay(cityName="London", temperature="69"){
         temperatureDiv.innerText = `The current temperature is ${temperature}`;
     
     contentDiv.appendChild(weatherHeader);
-    contentDiv.appendChild(temperatureDiv);
+    // contentDiv.appendChild(temperatureDiv);
 }
 
 export default weatherDisplay
