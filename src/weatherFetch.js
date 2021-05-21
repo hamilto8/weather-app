@@ -1,4 +1,5 @@
 import apiToken from './apiToken';
+import weatherDisplay from './weatherDisplay';
 
 
 function weatherFetch(cityName="London"){
@@ -7,6 +8,7 @@ function weatherFetch(cityName="London"){
     
     fetch(apiKeyUrl,{mode: 'cors'})
         .then(res => res.json())
+        .then(res => console.log(res))
         .catch(function(err){
             console.log(err);
         });
